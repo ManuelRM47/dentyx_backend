@@ -70,7 +70,9 @@ export default class ReviewsController {
             }
             
             Joi.assert(reviewInfo,Schemas.reviewSchema);
+            const ReviewID = await ReviewsDAO.getReviewID();
 
+            reviewInfo.review_id = ReviewID.value.count;
             reviewInfo.creation_date = new Date();
             reviewInfo.updatedAt = new Date();
 
@@ -90,11 +92,6 @@ export default class ReviewsController {
         try {
             const reviewInfo = {
                 username: req.body.username,
-                location: {
-                    city: req.body.location.city,
-                    state: req.body.location.state,
-                    country: req.body.location.country
-                },
             }
 
             Joi.assert(reviewInfo,Schemas.deleteReviewSchema);
@@ -104,6 +101,46 @@ export default class ReviewsController {
             )
             if (ReviewResponse.matchedCount == 0) {
                 res.status(400).json({ error: "Review not found with username and location provided" });
+            } else {
+                res.json({ status:"success"})
+            }
+        } catch (e) {
+            res.status(500).json({ error: e.message })
+        }
+    }
+
+    static async apiUpdateReviews (req,res,next) {
+        try {
+            const reviewInfo = {
+                username: req.body.username,
+                location: {
+                    city: req.body.location.city,
+                    state: req.body.location.state,
+                    country: req.body.location.country
+                },
+                review_values: {
+                    quality: req.body.review_values.quality,
+                    communication: req.body.review_values.communication,
+                    price: req.body.review_values.price,
+                    value: req.body.review_values.value,
+                    satisfaction: req.body.review_values.satisfaction,
+                    service: req.body.review_values.service,
+                    cleanliness: req.body.review_values.cleanliness,
+                    comfort: req.body.review_values.comfort,
+                    location: req.body.review_values.location,
+                },
+                review_comment: req.body.review_comment,
+                review_recommendation: req.body.review_recommendation,
+                deleted: false,
+            }
+
+            Joi.assert(reviewInfo,Schemas.reviewSchema);
+
+            const ReviewResponse = await ReviewsDAO.updateReview(
+                reviewInfo
+            )
+            if (ReviewResponse.matchedCount == 0) {
+                res.status(400).json({ error: "Review not found with username provided" });
             } else {
                 res.json({ status:"success"})
             }

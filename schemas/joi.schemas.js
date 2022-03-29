@@ -30,12 +30,6 @@ export default class Schemas {
 
     static deleteReviewSchema = Joi.object({
         username: Joi.string().required(),
-        location: Joi.object({
-            city: Joi.string().required(),
-            state: Joi.string().required(),
-            country: Joi.string().required(),
-        }
-        ).required(),
     })
 
 }

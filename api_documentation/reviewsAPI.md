@@ -15,25 +15,51 @@
 
 ```json
 {
-"username": "Juan Diaz",
-"location": {
-	"city": "CDMX",
-	"state": "Estado de Mexico",
-	"country": "Mexico"
-},
-"review_values": {
-	"quality": 1,
-	"communication": 5,
-	"price": 3,
-	"value": 3,
-	"satisfaction": 2,
-	"service": 3,
-	"cleanliness": 1,
-	"comfort": 1,
-	"location": 1
-},
-"review_comment": "Pesimo servicio.",
-"review_recommendation": "Mejorar todo"
+	"username": "Juan Diaz",
+	"location": {
+		"city": "CDMX",
+		"state": "Estado de Mexico",
+		"country": "Mexico"
+	},
+	"review_values": {
+		"quality": 1,
+		"communication": 5,
+		"price": 3,
+		"value": 3,
+		"satisfaction": 2,
+		"service": 3,
+		"cleanliness": 1,
+		"comfort": 1,
+		"location": 1
+	},
+	"review_comment": "Pesimo servicio.",
+	"review_recommendation": "Mejorar todo"
+}
+```
+
+- Add Review: PUT http://localhost:8080/api/v1/reviews/CRUD
+
+```json
+{
+	"username": "Manuel Alejandro",
+	"location": {
+		"city": "Ensenada",
+		"state": "Baja California",
+		"country": "Mexico"
+	},
+	"review_values": {
+		"quality": 3,
+		"communication": 4,
+		"price": 5,
+		"value": 5,
+		"satisfaction": 4,
+		"service": 3,
+		"cleanliness": 1,
+		"comfort": 1,
+		"location": 5
+	},
+	"review_comment": "Muy buen servicio.",
+	"review_recommendation": "Podria mejorarse la estancia"
 }
 ```
 
@@ -42,12 +68,7 @@
 
 ```json
 {
-"username": "Manuel Alejandro",
-"location": {
-	"city": "Mexicali",
-	"state": "Baja California",
-	"country": "Mexico"
-}
+	"username": "Manuel Alejandro",
 }
 ```
 

@@ -8,6 +8,7 @@ router.route("/username").get(ReviewsCtrl.apiGetReviewByUsername);
 
 router
     .route("/CRUD")
+    .put(ReviewsCtrl.apiUpdateReviews)
     .post(ReviewsCtrl.apiPostReview)
     .delete(ReviewsCtrl.apiDeleteReviews)
 

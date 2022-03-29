@@ -89,12 +89,46 @@ export default class ReviewsDAO {
         }
     }
 
+    static async updateReview(reviewDoc)
+        {
+        try {                
+            const updateResponse = await reviews.updateOne(
+                {username: reviewDoc.username, deleted: false},
+                {$set:{
+                    username: reviewDoc.username,
+                    location: {
+                        city: reviewDoc.location.city,
+                        state: reviewDoc.location.state,
+                        country: reviewDoc.location.country
+                    },
+                    review_values: {
+                        quality: reviewDoc.review_values.quality,
+                        communication: reviewDoc.review_values.communication,
+                        price: reviewDoc.review_values.price,
+                        value: reviewDoc.review_values.value,
+                        satisfaction: reviewDoc.review_values.satisfaction,
+                        service: reviewDoc.review_values.service,
+                        cleanliness: reviewDoc.review_values.cleanliness,
+                        comfort: reviewDoc.review_values.comfort,
+                        location: reviewDoc.review_values.location,
+                    },
+                    review_comment: reviewDoc.review_comment,
+                    review_recommendation: reviewDoc.review_recommendation,
+                }}
+            )
+            return updateResponse;
+        } catch (e) {
+            console.error(`Unable to update company: ${e}`);
+            return { error: e };
+        }
+    }
+
     //soft deletion
     static async deleteReview(reviewDoc)
         {
         try {
             const deleteResponse = await reviews.updateOne(
-                {location:reviewDoc.location, username: reviewDoc.username, deleted: false},
+                {username: reviewDoc.username, deleted: false},
                 {$set:{
                     deleted: true
                 }}
@@ -103,6 +137,19 @@ export default class ReviewsDAO {
             return deleteResponse
         } catch (error) {
             console.error(`Unable to delete review: ${e}`);
+            return { error: e };
+        }
+    }
+
+    static async getReviewID() {
+        try {
+            const testResponse = await reviews.findOneAndUpdate(
+                { "_id": "UNIQUE COUNT DOCUMENT IDENTIFIER" },
+                { $inc: { "count": 1 }}
+            )
+            return testResponse
+        } catch (e) {
+            console.error(`Unable to get ID: ${e}`);
             return { error: e };
         }
     }
