@@ -22,15 +22,15 @@
 		"country": "Mexico"
 	},
 	"review_values": {
-		"quality": 1,
-		"communication": 5,
-		"price": 3,
-		"value": 3,
-		"satisfaction": 2,
-		"service": 3,
-		"cleanliness": 1,
-		"comfort": 1,
-		"location": 1
+		"treatment_quality": 3,
+		"communication": 4,
+		"price": 5,
+		"facilities": 5,
+		"satisfaction": 4,
+		"personnel_treatment": 3,
+		"waiting_time": 1,
+		"explanation": 1,
+		"appointment": 5
 	},
 	"review_comment": "Pesimo servicio.",
 	"review_recommendation": "Mejorar todo"
@@ -48,15 +48,15 @@
 		"country": "Mexico"
 	},
 	"review_values": {
-		"quality": 3,
+		"treatment_quality": 3,
 		"communication": 4,
 		"price": 5,
-		"value": 5,
+		"facilities": 5,
 		"satisfaction": 4,
-		"service": 3,
-		"cleanliness": 1,
-		"comfort": 1,
-		"location": 5
+		"personnel_treatment": 3,
+		"waiting_time": 1,
+		"explanation": 1,
+		"appointment": 5
 	},
 	"review_comment": "Muy buen servicio.",
 	"review_recommendation": "Podria mejorarse la estancia"
@@ -84,15 +84,15 @@
 	"country": "Mexico"
 },
 "review_values": {
-	"quality": 3,
+	"treatment_quality": 3,
 	"communication": 4,
 	"price": 5,
-	"value": 5,
+	"facilities": 5,
 	"satisfaction": 4,
-	"service": 3,
-	"cleanliness": 1,
-	"comfort": 1,
-	"location": 5
+	"personnel_treatment": 3,
+	"waiting_time": 1,
+	"explanation": 1,
+	"appointment": 5
 },
 "review_comment": "Muy buen servicio.",
 "review_recommendation": "Podria mejorarse la estancia",
@@ -105,15 +105,15 @@
 	"country": "Mexico"
 },
 "review_values": {
-	"quality": 5,
-	"communication": 5,
+	"treatment_quality": 3,
+	"communication": 4,
 	"price": 5,
-	"value": 5,
-	"satisfaction": 5,
-	"service": 5,
-	"cleanliness": 5,
-	"comfort": 5,
-	"location": 5
+	"facilities": 5,
+	"satisfaction": 4,
+	"personnel_treatment": 3,
+	"waiting_time": 1,
+	"explanation": 1,
+	"appointment": 5
 },
 "review_comment": "Excelente servicio.",
 "review_recommendation": "Nada que mejorar en mi opinion",
@@ -126,15 +126,15 @@
 	"country": "Mexico"
 },
 "review_values": {
-	"quality": 1,
-	"communication": 2,
-	"price": 3,
-	"value": 3,
-	"satisfaction": 2,
-	"service": 3,
-	"cleanliness": 1,
-	"comfort": 1,
-	"location": 1
+	"treatment_quality": 3,
+	"communication": 4,
+	"price": 5,
+	"facilities": 5,
+	"satisfaction": 4,
+	"personnel_treatment": 3,
+	"waiting_time": 1,
+	"explanation": 1,
+	"appointment": 5
 },
 "review_comment": "Pesimo servicio.",
 "review_recommendation": "Mejorar todo"

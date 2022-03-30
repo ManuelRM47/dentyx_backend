@@ -45,27 +45,27 @@ export default class ReviewsController {
     //Registers a new review to the database
     static async apiPostReview (req,res,next) {
         try {
-
+            const body = req.body;
             const reviewInfo = {
-                username: req.body.username,
+                username: body.username,
                 location: {
-                    city: req.body.location.city,
-                    state: req.body.location.state,
-                    country: req.body.location.country
+                    city: body.location.city,
+                    state: body.location.state,
+                    country: body.location.country
                 },
                 review_values: {
-                    quality: req.body.review_values.quality,
-                    communication: req.body.review_values.communication,
-                    price: req.body.review_values.price,
-                    value: req.body.review_values.value,
-                    satisfaction: req.body.review_values.satisfaction,
-                    service: req.body.review_values.service,
-                    cleanliness: req.body.review_values.cleanliness,
-                    comfort: req.body.review_values.comfort,
-                    location: req.body.review_values.location,
+                    treatment_quality: body.review_values.treatment_quality,
+                    communication: body.review_values.communication,
+                    price: body.review_values.price,
+                    facilities: body.review_values.facilities,
+                    satisfaction: body.review_values.satisfaction,
+                    personnel_treatment: body.review_values.personnel_treatment,
+                    waiting_time: body.review_values.waiting_time,
+                    explanation: body.review_values.explanation,
+                    appointment: body.review_values.appointment,
                 },
-                review_comment: req.body.review_comment,
-                review_recommendation: req.body.review_recommendation,
+                review_comment: body.review_comment,
+                review_recommendation: body.review_recommendation,
                 deleted: false,
             }
             
@@ -111,26 +111,27 @@ export default class ReviewsController {
 
     static async apiUpdateReviews (req,res,next) {
         try {
+            const body = req.body;
             const reviewInfo = {
-                username: req.body.username,
+                username: body.username,
                 location: {
-                    city: req.body.location.city,
-                    state: req.body.location.state,
-                    country: req.body.location.country
+                    city: body.location.city,
+                    state: body.location.state,
+                    country: body.location.country
                 },
                 review_values: {
-                    quality: req.body.review_values.quality,
-                    communication: req.body.review_values.communication,
-                    price: req.body.review_values.price,
-                    value: req.body.review_values.value,
-                    satisfaction: req.body.review_values.satisfaction,
-                    service: req.body.review_values.service,
-                    cleanliness: req.body.review_values.cleanliness,
-                    comfort: req.body.review_values.comfort,
-                    location: req.body.review_values.location,
+                    treatment_quality: body.review_values.treatment_quality,
+                    communication: body.review_values.communication,
+                    price: body.review_values.price,
+                    facilities: body.review_values.facilities,
+                    satisfaction: body.review_values.satisfaction,
+                    personnel_treatment: body.review_values.personnel_treatment,
+                    waiting_time: body.review_values.waiting_time,
+                    explanation: body.review_values.explanation,
+                    appointment: body.review_values.appointment,
                 },
-                review_comment: req.body.review_comment,
-                review_recommendation: req.body.review_recommendation,
+                review_comment: body.review_comment,
+                review_recommendation: body.review_recommendation,
                 deleted: false,
             }
 
