@@ -5,7 +5,10 @@
   "main": "index.js",
   "type":"module",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js"
+  },
+  "engines":{
+    "node": "17.6.0"
   },
   "repository": {
     "type": "git",
