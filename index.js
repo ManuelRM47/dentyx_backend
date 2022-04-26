@@ -23,6 +23,15 @@ MongoClient.connect(
         //Call DB connection
         await ReviewsDAO.injectDB(client);
         
+        const __dirname = path.resolve();
+        if (process.env.NODE_DEV === 'production'){
+            app.use(express.static(path.join(__dirname,'client','build')))
+
+            app.get('*', (req,res) => {
+                res.sendFile(path.resolve(__dirname,'client','build','index.html'));
+            });
+        }
+
         //App listener
         app.listen(PORT, () => {
             console.log(`listening on port ${PORT}`)
