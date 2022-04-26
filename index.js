@@ -6,7 +6,7 @@ dotenv.config();
 
 const MongoClient = mongodb.MongoClient;
 
-const port = process.env.port || 8000;
+const PORT = process.env.PORT || 8080;
 
 MongoClient.connect(
     process.env.ATLAS_URI,
@@ -24,7 +24,7 @@ MongoClient.connect(
         await ReviewsDAO.injectDB(client);
         
         //App listener
-        app.listen(port, () => {
-            console.log(`listening on port ${port}`)
+        app.listen(PORT, () => {
+            console.log(`listening on port ${PORT}`)
         });
     })
